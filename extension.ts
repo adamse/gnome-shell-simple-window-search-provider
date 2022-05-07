@@ -27,8 +27,12 @@ const Shell = imports.gi.Shell;
 
 const Me = ExtensionUtils.getCurrentExtension();
 
+const debugLogOn: boolean = false;
+
 function debugLog(str: any): void {
-    log(`[Window search provider] ${str}`);
+    if (debugLogOn) {
+        log(`[Window search provider] ${str}`);
+    }
 }
 
 interface WindowInfo {
