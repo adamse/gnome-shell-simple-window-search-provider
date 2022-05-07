@@ -8,6 +8,8 @@
 - https://gitlab.gnome.org/GNOME/gnome-weather/-/blob/main/src/service/searchProvider.js
 - https://gjs.guide/extensions/development/creating.html#gnome-extensions-tool
 - https://github.com/klorenz/gnome-shell-window-search-provider
+- https://developer.gnome.org/documentation/tutorials/search-provider.html
+
 
 ## dev
 
