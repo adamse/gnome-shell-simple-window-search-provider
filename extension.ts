@@ -60,10 +60,6 @@ class WindowSearchProvider {
         }
     }
 
-    _match(terms: string[], info: WindowInfo): boolean {
-        return true;
-    }
-
     getInitialResultSet(terms: string[], callback, _cancellable): void {
         debugLog(`getInitialResultSet: terms=${terms.join(" ")}`);
         const sp = this;
