@@ -6,10 +6,11 @@ const ExtensionUtils = imports.misc.extensionUtils;
 const Main = imports.ui.main;
 const Meta = imports.gi.Meta;
 const Shell = imports.gi.Shell;
+const Gio = imports.gi.Gio;
 
 const Me = ExtensionUtils.getCurrentExtension();
 
-const debugLogOn: boolean = false;
+const debugLogOn: boolean = true;
 
 function debugLog(str: any): void {
     if (debugLogOn) {
@@ -28,10 +29,28 @@ interface WindowInfo {
 
 class WindowSearchProvider {
     results: any;
+    appInfo: any;
 
     constructor() {
         debugLog(`constructing`);
         this.results = {};
+
+        this.appInfo = Gio.AppInfo.get_all().filter(function (appInfo) {
+            try {
+              let id = appInfo.get_id();
+              return id.match(/gnome-session-properties/);
+            }
+            catch (e) {
+              return null;
+            }
+        })[0]
+
+        this.appInfo.get_name = function () {
+          return 'Windows';
+        };
+        this.appInfo.get_description = function () {
+          return 'Open windows';
+        };
     }
 
     _windowInfo(win: any, key: string): WindowInfo  {
