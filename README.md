@@ -17,10 +17,15 @@
 ```
 # on ubuntu, install gnome-shell-extensions and typescript
 sudo apt install gnome-shell-extensions node-typescript
+
 # clone
 mkdir -p ~/.local/share/gnome-shell/extensions
 cd ~/.local/share/gnome-shell/extensions
 git clone https://github.com/adamse/gnome-shell-simple-window-search-provider "window-search-provider@ase.ethnoll.net"
+
+# build the typescript
+cd window-search-provider@ase.ethnoll.net
+make
 ```
 
 restart the gnome session (log out-log in) and you should be able to enable it in the extensions app.
