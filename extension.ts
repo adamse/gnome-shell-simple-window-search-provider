@@ -3,7 +3,7 @@
 'use strict';
 
 declare var imports: any;
-declare var display: any;
+declare var global: any;
 declare function log(what: any): void;
 
 interface ResultMeta {
@@ -121,7 +121,7 @@ class WindowSearchProvider implements SearchProvider {
 
         var resultKeys = [];
         var results = {};
-        display.get_tab_list(Meta.TabList.NORMAL, null)
+        global.display.get_tab_list(Meta.TabList.NORMAL, null)
             .forEach(function (win, index) {
                 const key = 'w' + index;
                 const info = sp.makeWindowInfo(win);
