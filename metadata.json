@@ -3,6 +3,7 @@
   "description": "Add windows to the gnome search thing",
   "uuid": "window-search-provider@ase.ethnoll.net",
   "shell-version": [
-    "40"
+    "40",
+    "42"
   ]
 }
